@@ -14,7 +14,7 @@ async function init(){try{
  const data=await response.json();stocks=data.stocks;
  for(const key of ['buy','sell','hold'])document.getElementById(key).textContent=stocks.filter(s=>s.signal===key).length;
  document.querySelector('#total').textContent=stocks.length;
- document.querySelector('#updated').textContent=`${data.source==='saved_log'?'保存ログから復元':'判定更新'}：${data.generated_at.replace('T',' ').replace(/\.\d+.*$/,' UTC')}`;
+ document.querySelector('#updated').textContent=`${data.source==='saved_log'?'保存ログから復元':'判定更新'}：${data.source==='saved_log'?data.generated_at:new Date(data.generated_at).toLocaleString('ja-JP',{timeZone:'Asia/Tokyo'})+'（日本時間）'}`;
  const old=stocks.filter(s=>s.date && Date.now()-Date.parse(s.date+'T00:00:00+09:00')>4*86400000).length;
  const missing=stocks.filter(s=>s.signal==='unavailable').length;
  if(old||missing||data.source==='saved_log'){
