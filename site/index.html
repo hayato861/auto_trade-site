@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#112b27"><title>AUTO TRADE | シグナルボード</title><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head>
+<body>
+<header><a href="./" class="brand"><span class="mark">↗</span> AUTO TRADE</a><span class="header-note">日本株 / SMAモニター</span></header>
+<main><section class="hero"><div class="eyebrow">MARKET SIGNALS</div><h1>相場の変化を、<br>ひと目で。</h1><p>監視銘柄の移動平均クロスをチェック。</p><div id="updated">データを読み込んでいます…</div></section>
+<div id="notice" role="status" hidden></div>
+<section class="summary" aria-label="シグナル集計"><div><span>監視銘柄</span><strong id="total">—</strong></div><div><span><i class="dot buy"></i>買いシグナル</span><strong id="buy">—</strong></div><div><span><i class="dot sell"></i>売りシグナル</span><strong id="sell">—</strong></div><div><span>静観</span><strong id="hold">—</strong></div></section>
+<section class="watchlist"><div class="section-title"><div><div class="eyebrow">WATCHLIST</div><h2>銘柄一覧</h2></div><span id="count" aria-live="polite"></span></div><div class="controls"><label class="search"><span>銘柄名・コードで検索</span><input id="search" type="search" placeholder="例：NTT、9432" autocomplete="off"></label><label class="filter-label">シグナル<select id="filter"><option value="all">すべて</option><option value="buy">買い</option><option value="sell">売り</option><option value="hold">静観</option><option value="unavailable">取得不可</option></select></label></div><div id="stocks" class="grid"></div><p id="empty" hidden>該当する銘柄はありません。検索条件を変更してください。</p></section>
+<section class="explanation"><h2>シグナルの見方</h2><p><b>買い</b>：短期移動平均が長期移動平均を上抜け。<b>売り</b>：下抜け。<b>静観</b>：直近の足でクロスなし。</p><p>日足の調整後価格を使用。自動発注機能はありません。損切り・利確は終値を基準にした設定上の目安です。</p></section>
+</main><footer>AUTO TRADE <span>日々の判断に、見通しを。</span></footer>
+</body></html>
