@@ -6,7 +6,17 @@
 <main><section class="hero"><div class="eyebrow">MARKET SIGNALS</div><h1>相場の変化を、<br>ひと目で。</h1><p>監視銘柄の移動平均クロスをチェック。</p><div id="updated">データを読み込んでいます…</div></section>
 <div id="notice" role="status" hidden></div>
 <section class="summary" aria-label="シグナル集計"><div><span>監視銘柄</span><strong id="total">—</strong></div><div><span><i class="dot buy"></i>買いシグナル</span><strong id="buy">—</strong></div><div><span><i class="dot sell"></i>売りシグナル</span><strong id="sell">—</strong></div><div><span>静観</span><strong id="hold">—</strong></div></section>
+<section class="signal-guide" aria-labelledby="signal-guide-title">
+<h2 id="signal-guide-title">買い・売りは、どんな時に出る？</h2>
+<p class="guide-intro">短期と長期の移動平均（SMA）が、直近の取引日で交差した時に表示します。SMAは、一定期間の終値の平均です。</p>
+<div class="signal-rules">
+<article class="signal-rule"><h3><span class="badge buy">買い</span> 短期線が長期線を上抜けた時</h3><p>前の取引日には短期SMAが長期SMA以下で、最新の取引日に長期SMAより高くなった場合です。</p><div class="rule-formula">前の取引日：短期 ≤ 長期<br><strong>最新の取引日：短期 &gt; 長期</strong></div><p class="rule-name">ゴールデンクロス</p></article>
+<article class="signal-rule"><h3><span class="badge sell">売り</span> 短期線が長期線を下抜けた時</h3><p>前の取引日には短期SMAが長期SMA以上で、最新の取引日に長期SMAより低くなった場合です。</p><div class="rule-formula">前の取引日：短期 ≥ 長期<br><strong>最新の取引日：短期 &lt; 長期</strong></div><p class="rule-name">デッドクロス</p></article>
+</div>
+<p class="guide-note"><b>静観：</b>直近の取引日で、上記の交差が起きていない状態です。短期線が長期線より上・下にあるだけでは、買い・売りは出続けません。</p>
+<details class="guide-details"><summary>判定に使うデータと設定について</summary><p>各銘柄カードの日付の調整後終値を使い、その1つ前の取引日と比較します。短期・長期の期間は銘柄ごとに異なり、カードに表示しています。必要なデータがそろわない場合は「取得不可」です。</p><p>売りシグナルは移動平均の交差で判定します。表示中の損切り・利確価格への到達を判定したものではありません。損切り・利確価格は終値を基準にした設定上の目安で、自動発注機能はありません。</p></details>
+</section>
 <section class="watchlist"><div class="section-title"><div><div class="eyebrow">WATCHLIST</div><h2>銘柄一覧</h2></div><span id="count" aria-live="polite"></span></div><div class="controls"><label class="search"><span>銘柄名・コードで検索</span><input id="search" type="search" placeholder="例：NTT、9432" autocomplete="off"></label><label class="filter-label">シグナル<select id="filter"><option value="all">すべて</option><option value="buy">買い</option><option value="sell">売り</option><option value="hold">静観</option><option value="unavailable">取得不可</option></select></label></div><div id="stocks" class="grid"></div><p id="empty" hidden>該当する銘柄はありません。検索条件を変更してください。</p></section>
-<section class="explanation"><h2>シグナルの見方</h2><p><b>買い</b>：短期移動平均が長期移動平均を上抜け。<b>売り</b>：下抜け。<b>静観</b>：直近の足でクロスなし。</p><p>日足の調整後価格を使用。自動発注機能はありません。損切り・利確は終値を基準にした設定上の目安です。</p></section>
+
 </main><footer>AUTO TRADE <span>日々の判断に、見通しを。</span></footer>
 </body></html>
